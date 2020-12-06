@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iarProjectConnection name="Simplicity Configurator" version="1.8">
+  <files>
+    <group name="autogen">
+      <path>autogen\linkerfile.icf</path>
+      <path>autogen\.crc_config.crc</path>
+    </group>
+    <group name="gecko_sdk_3.0.0">
+      <group name="platform">
+        <group name="common">
+          <group name="toolchain">
+            <group name="src">
+              <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\common\toolchain\src\sl_memory.c</path>
+            </group>
+            <group name="inc">
+              <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\common\toolchain\inc\sl_memory_region.h</path>
+              <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\common\toolchain\inc\sl_memory.h</path>
+            </group>
+          </group>
+        </group>
+        <group name="emlib">
+          <group name="src">
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\src\em_gpio.c</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\src\em_lesense.c</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\src\em_system.c</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\src\em_lcd.c</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\src\em_emu.c</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\src\em_cmu.c</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\src\em_assert.c</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\src\em_core.c</path>
+          </group>
+          <group name="inc">
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_gpio.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_lesense.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_system.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_lcd.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_emu.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_cmu.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_assert.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_bus.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_common.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_ramfunc.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_version.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc\em_core.h</path>
+          </group>
+        </group>
+        <group name="CMSIS">
+          <group name="Include">
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include\arm_common_tables.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include\arm_const_structs.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include\arm_math.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include\cmsis_compiler.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include\cmsis_version.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include\cmsis_iccarm.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include\core_cm3.h</path>
+            <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include\mpu_armv7.h</path>
+          </group>
+        </group>
+        <group name="Device">
+          <group name="SiliconLabs">
+            <group name="EFM32GG">
+              <group name="Source">
+                <group name="IAR">
+                  <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Source\IAR\startup_efm32gg.c</path>
+                </group>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Source\system_efm32gg.c</path>
+              </group>
+              <group name="Include">
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg990f1024.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_acmp.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_adc.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_aes.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_af_pins.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_af_ports.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_burtc.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_burtc_ret.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_calibrate.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_cmu.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_dac.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_devinfo.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_dma.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_dma_ch.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_dma_descriptor.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_dmactrl.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_dmareq.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_ebi.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_emu.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_etm.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_gpio.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_gpio_p.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_i2c.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_lcd.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_lesense.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_lesense_buf.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_lesense_ch.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_lesense_st.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_letimer.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_leuart.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_msc.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_pcnt.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_prs.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_prs_ch.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_prs_signals.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_rmu.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_romtable.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_rtc.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_timer.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_timer_cc.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_uart.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_usart.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_usb.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_usb_diep.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_usb_doep.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_usb_hc.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_vcmp.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\efm32gg_wdog.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\em_device.h</path>
+                <path>..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include\system_efm32gg.h</path>
+              </group>
+            </group>
+          </group>
+        </group>
+      </group>
+    </group>
+    <group name="config">
+      <path>config\sl_memory_config.h</path>
+    </group>
+  </files>
+  <SimplicityStudioMetadata>
+    <metadata>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</metadata>
+  </SimplicityStudioMetadata>
+</iarProjectConnection>

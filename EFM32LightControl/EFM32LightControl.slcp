@@ -1,0 +1,10 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+component:
+- {id: emlib_gpio}
+- {id: emlib_lesense}
+- {id: emlib_lcd}
+- {id: brd2200a}
+- {id: EFM32GG990F1024}
+toolchain_settings: []
+ui_hints: {}
+
