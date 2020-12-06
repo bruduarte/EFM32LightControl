@@ -26,6 +26,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>BSP/bsp_stk_leds.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/hardware/kit/common/bsp/bsp_stk_leds.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/segmentlcd.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/hardware/kit/common/drivers/segmentlcd.c</locationURI>
+		</link>
+		<link>
 			<name>emlib/em_system.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_system.c</locationURI>
@@ -199,6 +209,21 @@
 			<name>gecko_sdk_3.0.0/platform/common/toolchain/src/sl_memory.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/common/toolchain/src/sl_memory.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emdrv/common/inc/ecode.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/common/inc/ecode.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emdrv/gpiointerrupt/src/gpiointerrupt.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/gpiointerrupt/src/gpiointerrupt.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_3.0.0/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg990f1024.h</name>

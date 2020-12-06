@@ -349,7 +349,9 @@
                     <state>$FILE_DIR$</state>
                     <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\common\toolchain\inc</state>
                     <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc</state>
+                    <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emdrv\gpiointerrupt\inc</state>
                     <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include</state>
+                    <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emdrv\common\inc</state>
                     <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include</state>
                     <state>$PROJ_DIR$\config</state>
                     <state>$PROJ_DIR$\autogen</state>
@@ -621,7 +623,9 @@
                     <state>$FILE_DIR$</state>
                     <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\common\toolchain\inc</state>
                     <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emlib\inc</state>
+                    <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emdrv\gpiointerrupt\inc</state>
                     <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\CMSIS\Include</state>
+                    <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\emdrv\common\inc</state>
                     <state>$PROJ_DIR$\..\..\..\..\..\..\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.0\platform\Device\SiliconLabs\EFM32GG\Include</state>
                     <state>$PROJ_DIR$\config</state>
                     <state>$PROJ_DIR$\autogen</state>

@@ -16,9 +16,12 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+BSP \
+Drivers \
 gecko_sdk_3.0.0/platform/Device/SiliconLabs/EFM32GG/Source/GCC \
 gecko_sdk_3.0.0/platform/Device/SiliconLabs/EFM32GG/Source \
 gecko_sdk_3.0.0/platform/common/toolchain/src \
+gecko_sdk_3.0.0/platform/emdrv/gpiointerrupt/src \
 gecko_sdk_3.0.0/platform/emlib/src \
 src \
 
