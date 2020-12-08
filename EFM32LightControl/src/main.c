@@ -72,6 +72,9 @@ typedef enum {
 static volatile LIGHTSENSE_GlobalState_TypeDef appStateGlobal = INIT_STATE;
 static volatile uint8_t eventCounter = 0U;
 static volatile bool lightDetected = false;
+static volatile uint32_t msTicks = 0; /* counts 1ms timeTicks */
+static volatile uint32_t msSinceLightDetected = 0;
+
 
 /***************************************************************************//**
  * Prototypes
@@ -85,6 +88,19 @@ void setupACMP(void);
 void setupLESENSE(void);
 void setupPRS(void);
 void setupPCNT(void);
+void Delay(uint32_t dlyTicks);
+
+/***************************************************************************//**
+ * @brief Delays number of msTick Systicks (typically 1 ms)
+ * @param dlyTicks Number of ticks to delay
+ ******************************************************************************/
+void Delay(uint32_t dlyTicks)
+{
+  uint32_t curTicks;
+
+  curTicks = msTicks;
+  while ((msTicks - curTicks) < dlyTicks) ;
+}
 
 /***************************************************************************//**
  * @brief  Setup the CMU
@@ -314,6 +330,26 @@ void setupPCNT(void)
   PCNT_IntEnable(PCNT0, PCNT_IEN_OF);
 }
 
+void setupLCD(){
+  /* Enable LCD without voltage boost */
+  SegmentLCD_Init(false);
+
+  /* Enable two leds to show we're alive */
+  BSP_LedsInit();
+  BSP_LedSet(0);
+  BSP_LedSet(1);
+
+  /* Enable all segments for testing - like a powerup*/
+  SegmentLCD_AllOn();
+  Delay(1000);
+
+  /* Disable all segments */
+  SegmentLCD_AllOff();
+  // disable all leds
+  BSP_LedClear(0);
+  BSP_LedClear(1);
+}
+
 /***************************************************************************//**
  * @brief  Setup eveything in the board
  ******************************************************************************/
@@ -339,9 +375,6 @@ void bootup(){
   /* Setup LESENSE. */
   setupLESENSE();
 
-  /* Initialize segment LCD. */
-  SegmentLCD_Init(false);
-
   /* Enable PCNT0 interrupt in NVIC. */
   NVIC_EnableIRQ(PCNT0_IRQn);
 
@@ -350,6 +383,15 @@ void bootup(){
 
   /* Enable LESENSE interrupt in NVIC. */
   NVIC_EnableIRQ(LESENSE_IRQn);
+
+  /* Setup SysTick Timer for 1 msec interrupts  */
+  if (SysTick_Config(CMU_ClockFreqGet(cmuClock_CORE) / 1000)) {
+      // stay here for ever if this configuration fails
+    while (1) ;
+  }
+
+  /* Setup LCD */
+  setupLCD();
 }
 
 /***************************************************************************//**
@@ -361,6 +403,9 @@ int main(void)
 
   /* Go to infinite loop. */
   while (1) {
+      if(msSinceLightDetected >= 1000){
+          lightDetected = false; // timeout for light detection
+      }
       if(lightDetected){
           SegmentLCD_Number(100 + eventCounter);
       }else{
@@ -403,4 +448,17 @@ void ACMP0_IRQHandler(void)
   ACMP0->IFC = ACMP_IFC_EDGE;
 
   lightDetected = true;
+  msSinceLightDetected = 0; // timestamp since last detection
+}
+
+/***************************************************************************//**
+ * @brief SysTick_Handler
+ *   Interrupt Service Routine for system tick counter
+ * @note
+ *   No wrap around protection
+ ******************************************************************************/
+void SysTick_Handler(void)
+{
+  msTicks++;       /* increment counter necessary in Delay()*/
+  msSinceLightDetected++;
 }
