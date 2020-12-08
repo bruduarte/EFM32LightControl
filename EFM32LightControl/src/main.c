@@ -315,10 +315,9 @@ void setupPCNT(void)
 }
 
 /***************************************************************************//**
- * @brief  Main function
+ * @brief  Setup eveything in the board
  ******************************************************************************/
-int main(void)
-{
+void bootup(){
   CORE_DECLARE_IRQ_STATE;
 
   /* Chip errata */
@@ -349,87 +348,23 @@ int main(void)
   /* Initialization done, enable interrupts globally. */
   CORE_EXIT_ATOMIC();
 
+  /* Enable LESENSE interrupt in NVIC. */
+  NVIC_EnableIRQ(LESENSE_IRQn);
+}
+
+/***************************************************************************//**
+ * @brief  Main function
+ ******************************************************************************/
+int main(void)
+{
+  bootup();
+
   /* Go to infinite loop. */
   while (1) {
-      switch (appStateGlobal) {
-        case BUTTON0_PRESS_STATE:
-        {
-          /* Initialize segment LCD. */
-          SegmentLCD_Init(false);
-          /* Turn all LCD segments off. */
-          SegmentLCD_AllOff();
-          /* Turn on the EM0 symbol. */
-          SegmentLCD_EnergyMode(0, true);
-          /* Turn on the gecko. */
-          SegmentLCD_Symbol(LCD_SYMBOL_GECKO, true);
-          /* Go to TIMER_RESET_STATE to reset the global timer. */
-          appStateGlobal = TIMER_RESET_STATE;
-        }
-        break;
-
-        case INIT_STATE:
-        {
-          /* Initialize segment LCD. */
-          SegmentLCD_Init(false);
-          /* Turn all LCD segments off. */
-          SegmentLCD_AllOff();
-          /* Turn on the EM0 symbol. */
-          SegmentLCD_EnergyMode(0, true);
-          /* Turn on the gecko. */
-          SegmentLCD_Symbol(LCD_SYMBOL_GECKO, true);
-          /* Write text on LCD. */
-          SegmentLCD_Write(LIGHTSENSE_EXAMPLE_TEXT);
-          /* Go to TIMER_RESET_STATE to reset the global timer. */
-          appStateGlobal = TIMER_RESET_STATE;
-        }
-        break;
-
-        case TIMER_RESET_STATE:
-        {
-          /* Enable LESENSE interrupt in NVIC. */
-          NVIC_EnableIRQ(LESENSE_IRQn);
-          /* Go to the AWAKE_STATE. */
-          appStateGlobal = AWAKE_STATE;
-        }
-        break;
-
-        case AWAKE_STATE:
-        {
-          /* Stay awake until the timer has fired. */
-          appStateGlobal = AWAKE_STATE;
-          /* Write the number of counts. */
-          if(lightDetected){
-              SegmentLCD_Number(100 + eventCounter);
-          }else{
-              SegmentLCD_Number(eventCounter);
-          }
-
-        }
-        break;
-
-        case SENSE_PREPARE_STATE:
-        {
-          /* Disable LCD to avoid excessive current consumption */
-          SegmentLCD_Disable();
-          /* Go to SENSE_STATE. */
-          appStateGlobal = SENSE_STATE;
-        }
-        break;
-
-        case SENSE_STATE:
-        {
-          /* Enter EM2. */
-          EMU_EnterEM2(true);
-        }
-        break;
-
-        case ERROR_STATE:
-        default:
-        {
-          /* Stay in ERROR_STATE. */
-          appStateGlobal = ERROR_STATE;
-        }
-        break;
+      if(lightDetected){
+          SegmentLCD_Number(100 + eventCounter);
+      }else{
+          SegmentLCD_Number(eventCounter);
       }
   }
 }
