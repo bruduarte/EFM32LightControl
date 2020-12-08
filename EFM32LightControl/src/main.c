@@ -30,7 +30,6 @@
 #include "em_lesense.h"
 #include "em_pcnt.h"
 #include "em_prs.h"
-#include "em_rtc.h"
 
 #include "segmentlcd.h"
 #include "lightsense_conf.h"
@@ -79,7 +78,6 @@ static volatile uint8_t eventCounter = 0U;
  ******************************************************************************/
 void LESENSE_IRQHandler(void);
 void PCNT0_IRQHandler(void);
-void RTC_IRQHandler(void);
 
 void setupCMU(void);
 void setupGPIO(void);
@@ -87,7 +85,6 @@ void setupACMP(void);
 void setupLESENSE(void);
 void setupPRS(void);
 void setupPCNT(void);
-void setupRTC(void);
 
 /***************************************************************************//**
  * @brief  Setup the CMU
@@ -118,14 +115,10 @@ void setupCMU(void)
   CMU_ClockEnable(cmuClock_CORELE, true);
   /* Enable clock for PCNT. */
   CMU_ClockEnable(cmuClock_PCNT0, true);
-  /* Enable clock on RTC. */
-  CMU_ClockEnable(cmuClock_RTC, true);
   /* Enable clock for LESENSE. */
   CMU_ClockEnable(cmuClock_LESENSE, true);
   /* Enable clock divider for LESENSE. */
   CMU_ClockDivSet(cmuClock_LESENSE, cmuClkDiv_1);
-  /* Enable clock divider for RTC. */
-  CMU_ClockDivSet(cmuClock_RTC, cmuClkDiv_32768);
 }
 
 /***************************************************************************//**
@@ -313,31 +306,6 @@ void setupPCNT(void)
 }
 
 /***************************************************************************//**
- * @brief  Setup the RTC
- ******************************************************************************/
-void setupRTC(void)
-{
-  /* RTC configuration constant table. */
-  static const RTC_Init_TypeDef initRTC = RTC_INIT_DEFAULT;
-
-  /* Initialize RTC. */
-  RTC_Init(&initRTC);
-
-  /* Set COMP0 to overflow at the configured value (in seconds). */
-  RTC_CompareSet(0, (uint32_t)CMU_ClockFreqGet(cmuClock_RTC)
-                 * (uint32_t)INIT_STATE_TIME_SEC);
-
-  /* Make sure that all pending interrupt is cleared. */
-  RTC_IntClear(0xFFFFFFFFUL);
-
-  /* Enable interrupt for COMP0. */
-  RTC_IntEnable(RTC_IEN_COMP0);
-
-  /* Finally enable RTC. */
-  RTC_Enable(true);
-}
-
-/***************************************************************************//**
  * @brief  Main function
  ******************************************************************************/
 int main(void)
@@ -362,14 +330,10 @@ int main(void)
   setupPCNT();
   /* Setup LESENSE. */
   setupLESENSE();
-  /* Setup RTC. */
-  setupRTC();
 
   /* Initialize segment LCD. */
   SegmentLCD_Init(false);
 
-  /* Enable RTC interrupt in NVIC. */
-  NVIC_EnableIRQ(RTC_IRQn);
   /* Enable PCNT0 interrupt in NVIC. */
   NVIC_EnableIRQ(PCNT0_IRQn);
 
@@ -381,10 +345,6 @@ int main(void)
       switch (appStateGlobal) {
         case BUTTON0_PRESS_STATE:
         {
-          /* Enable clock for RTC. */
-          CMU_ClockEnable(cmuClock_RTC, true);
-          /* Enable RTC. */
-          RTC_Enable(true);
           /* Initialize segment LCD. */
           SegmentLCD_Init(false);
           /* Turn all LCD segments off. */
@@ -400,10 +360,6 @@ int main(void)
 
         case INIT_STATE:
         {
-          /* Enable clock for RTC. */
-          CMU_ClockEnable(cmuClock_RTC, true);
-          /* Enable RTC. */
-          RTC_Enable(true);
           /* Initialize segment LCD. */
           SegmentLCD_Init(false);
           /* Turn all LCD segments off. */
@@ -423,9 +379,6 @@ int main(void)
         {
           /* Enable LESENSE interrupt in NVIC. */
           NVIC_EnableIRQ(LESENSE_IRQn);
-          /* Reset RTC counter by disabling and enabling the RTC. */
-          RTC_Enable(false);
-          RTC_Enable(true);
           /* Go to the AWAKE_STATE. */
           appStateGlobal = AWAKE_STATE;
         }
@@ -492,22 +445,4 @@ void PCNT0_IRQHandler(void)
 
 }
 
-/***************************************************************************//**
- * @brief  RTC common interrupt handler
- ******************************************************************************/
-void RTC_IRQHandler(void)
-{
-  uint32_t tmp;
-
-  /* Store enabled interrupts in temp variable. */
-  tmp = RTC->IEN;
-
-  /* Check if COMP0 interrupt is enabled and set. */
-  if (RTC_IF_COMP0 & (tmp & RTC_IntGet())) {
-    /* Timer has fired, clear interrupt flag... */
-    RTC_IntClear(RTC_IFC_COMP0);
-    /* ...and set the global flag. */
-    secTimerFired = true;
-  }
-}
 
