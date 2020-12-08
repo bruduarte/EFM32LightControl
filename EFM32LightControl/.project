@@ -91,6 +91,16 @@
 			<locationURI>STUDIO_SDK_LOC/platform/CMSIS/Include/mpu_armv7.h</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_acmp.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_acmp.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_adc.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_adc.h</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_assert.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_assert.h</locationURI>
@@ -136,9 +146,24 @@
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_lesense.h</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_pcnt.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_pcnt.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_prs.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_prs.h</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_ramfunc.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_ramfunc.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_rtc.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_rtc.h</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_system.h</name>
@@ -149,6 +174,16 @@
 			<name>gecko_sdk_3.0.0/platform/emlib/inc/em_version.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_version.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/src/em_acmp.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_acmp.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/src/em_adc.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_adc.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_3.0.0/platform/emlib/src/em_assert.c</name>
@@ -184,6 +219,21 @@
 			<name>gecko_sdk_3.0.0/platform/emlib/src/em_lesense.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_lesense.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/src/em_pcnt.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_pcnt.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/src/em_prs.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_prs.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_3.0.0/platform/emlib/src/em_rtc.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_rtc.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_3.0.0/platform/emlib/src/em_system.c</name>
