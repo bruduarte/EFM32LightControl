@@ -44,8 +44,6 @@
 #define LIGHTSENSE_NUMOF_MODES   2U
 
 #define LIGHTSENSE_EXAMPLE_TEXT  "LIGHT"
-#define LIGHTSENSE_MODE0_TEXT    "MODE0"
-#define LIGHTSENSE_MODE1_TEXT    "MODE1"
 
 #define LIGHTSENSE_EXCITE_PORT   gpioPortD
 #define LIGHTSENSE_EXCITE_PIN    6U
@@ -57,12 +55,6 @@
 #define LIGHTSENSE_BUTTON0_FLAG  (1 << LIGHTSENSE_BUTTON0_PIN)
 
 #define INIT_STATE_TIME_SEC      3U
-
-/* Type definition for global state. */
-typedef enum {
-  MODE0 = 0,
-  MODE1 = 1
-} LIGHTSENSE_GlobalMode_TypeDef;
 
 /* Type definition for global state. */
 typedef enum {
@@ -88,7 +80,6 @@ static volatile uint8_t eventCounter = 0U;
 void LESENSE_IRQHandler(void);
 void PCNT0_IRQHandler(void);
 void RTC_IRQHandler(void);
-void GPIO_EVEN_IRQHandler(void);
 
 void setupCMU(void);
 void setupGPIO(void);
@@ -402,8 +393,6 @@ int main(void)
           SegmentLCD_EnergyMode(0, true);
           /* Turn on the gecko. */
           SegmentLCD_Symbol(LCD_SYMBOL_GECKO, true);
-          /* Write text on LCD. */
-          SegmentLCD_Write(LIGHTSENSE_MODE0_TEXT);
           /* Go to TIMER_RESET_STATE to reset the global timer. */
           appStateGlobal = TIMER_RESET_STATE;
         }
