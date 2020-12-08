@@ -70,8 +70,8 @@ typedef enum {
  * Global variables
  ******************************************************************************/
 static volatile LIGHTSENSE_GlobalState_TypeDef appStateGlobal = INIT_STATE;
-static volatile bool secTimerFired = false;
 static volatile uint8_t eventCounter = 0U;
+static volatile bool lightDetected = false;
 
 /***************************************************************************//**
  * Prototypes
@@ -154,7 +154,7 @@ void setupACMP(void)
     .halfBias = true,                  /* halfBias */
     .biasProg =  0x0,                  /* biasProg */
     .interruptOnFallingEdge =  false,  /* interrupt on rising edge */
-    .interruptOnRisingEdge =  false,   /* interrupt on falling edge */
+    .interruptOnRisingEdge =  true,   /* interrupt on falling edge */
     .warmTime = acmpWarmTime512,       /* 512 cycle warmup to be safe */
     .hysteresisLevel = acmpHysteresisLevel5, /* hysteresis level 5 */
     .inactiveValue = false,            /* inactive value */
@@ -170,7 +170,16 @@ void setupACMP(void)
   /* Set up ACMP negSel to VDD, posSel is controlled by LESENSE. */
   ACMP_ChannelSet(ACMP0, acmpChannelVDD, acmpChannel0);
   /* LESENSE controls ACMP thus ACMP_Enable(ACMP0) should NOT be called in order
-   * to ensure lower current consumption. */
+   * to ensure lower current consumption.
+   *
+   * ERRATA: we donnot need low power. Enable ACMP to be able to the its
+   * interruptions*/
+
+  ACMP_IntEnable(ACMP0, ACMP_IEN_EDGE);   /* Enable edge interrupt */
+  /* Enable interrupts */
+  NVIC_ClearPendingIRQ(ACMP0_IRQn);
+  NVIC_EnableIRQ(ACMP0_IRQn);
+  ACMP_Enable(ACMP0);
 }
 
 /***************************************************************************//**
@@ -389,7 +398,11 @@ int main(void)
           /* Stay awake until the timer has fired. */
           appStateGlobal = AWAKE_STATE;
           /* Write the number of counts. */
-          SegmentLCD_Number(eventCounter);
+          if(lightDetected){
+              SegmentLCD_Number(100 + eventCounter);
+          }else{
+              SegmentLCD_Number(eventCounter);
+          }
 
         }
         break;
@@ -446,3 +459,13 @@ void PCNT0_IRQHandler(void)
 }
 
 
+/**************************************************************************//**
+ * @brief ACMP0 Interrupt handler
+ *****************************************************************************/
+void ACMP0_IRQHandler(void)
+{
+  /* Clear interrupt flag */
+  ACMP0->IFC = ACMP_IFC_EDGE;
+
+  lightDetected = true;
+}
